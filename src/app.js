@@ -20,7 +20,7 @@ x.appendChild(myCanvas);
 
 const loadWensen = async () => {
   const wJson = await fetch(
-    "https://europe-west1-wie-is-het-264722.cloudfunctions.net/getWensen"
+    "https://europe-west1-wie-is-het-264722.cloudfunctions.net/getWensen-tijs"
   );
   const wensen = await wJson.json();
   let template = require("./wensen.pug");
