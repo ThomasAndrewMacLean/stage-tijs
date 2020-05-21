@@ -1,0 +1,169 @@
+@import url("https://fonts.googleapis.com/css2?family=Amatic+SC&display=swap");
+
+img {
+  width: 100%;
+  height: 75%;
+  object-position: top;
+  padding: 10px;
+  border-radius: 15px;
+  object-fit: cover;
+}
+html {
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+}
+body {
+  background: #ccf2fc;
+  font-size: 16px;
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+  font-family: "Amatic SC";
+}
+.wensen {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 30vh;
+  font-size: 2rem;
+}
+h1 {
+  font-family: "Amatic SC", sans-serif;
+  font-size: 5rem;
+  padding-bottom: 1rem;
+  color: #444;
+  background: white;
+  text-align: center;
+}
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  user-select: none;
+}
+ul {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.kader {
+  width: 300px;
+  position: relative;
+  margin: 1rem;
+  height: 300px;
+  perspective: 1000px;
+}
+
+.wrapper {
+  transition: 0.6s;
+  transform-style: preserve-3d;
+
+  position: relative;
+}
+
+.kader:hover .wrapper {
+  transform: rotateY(180deg);
+}
+.kader:active .wrapper {
+  transform: rotateY(180deg);
+}
+.kader:focus .wrapper {
+  transform: rotateY(180deg);
+}
+.front,
+.back {
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 300px;
+  width: 100%;
+  border-radius: 5px;
+  box-shadow: 0px 0px 20px 0px #2c616f61;
+}
+li:first-of-type::after {
+  content: "👆";
+  position: absolute;
+  top: 35%;
+  left: 50%;
+  font-size: 7rem;
+  animation-name: tap;
+  animation-duration: 2s;
+  pointer-events: none;
+  animation-fill-mode: forwards;
+  animation-delay: 2s;
+  opacity: 0;
+}
+@keyframes tap {
+  0% {
+  }
+  25% {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: 1;
+    transform: scale(0.9);
+  }
+  99% {
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.front {
+  z-index: 2;
+  overflow: hidden;
+  /* for firefox 31 */
+  transform: rotateY(0deg);
+  background-color: white;
+}
+
+/* back, initially hidden pane */
+.back {
+  background-color: white;
+
+  transform: rotateY(180deg);
+
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
+}
+.naam {
+  position: absolute;
+  background: #fff;
+  left: 9px;
+  bottom: 15px;
+  font-size: 2rem;
+  padding: 5px 30px;
+  backface-visibility: hidden;
+  border-radius: 4px;
+  color: #57c6e0;
+}
+
+p {
+  white-space: pre-line;
+  padding: 10px;
+  z-index: 3;
+  font-family: "Amatic SC";
+  font-size: 1.2rem;
+}
+.big {
+  font-size: 1.5rem;
+}
+.biggest {
+  font-size: 2.5rem;
+}
+.small {
+  font-size: 1rem;
+}
+canvas {
+  pointer-events: none;
+}

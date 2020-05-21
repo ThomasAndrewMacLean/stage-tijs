@@ -1,0 +1,10 @@
+ul
+    each wens in wensen
+        li(style="transform: rotate(" + Math.floor(Math.random() * 15 - Math.random() * 15) + "deg);")
+            .kader
+                .wrapper
+                    .front
+                        img(src=wens.Foto[0].thumbnails.small.url, data-src=wens.Foto[0].thumbnails.large.url, alt=wens.Naam)
+                        span.naam @#{wens.Naam}
+                    .back
+                        p(class=wens.Tekst.length <100 ? "biggest":wens.Tekst.length <390 ? "big":wens.Tekst.length >600? "small":"") #{wens.Tekst}
